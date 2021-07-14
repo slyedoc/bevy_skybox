@@ -25,7 +25,6 @@
 mod image;
 
 use bevy::prelude::*;
-use bevy::render::camera::PerspectiveProjection;
 
 /// Create a secondary camera with a longer draw distance than the main camera.
 fn create_pipeline(

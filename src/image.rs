@@ -28,7 +28,6 @@
 //! and then paste it into a new file.
 
 use bevy::prelude::*;
-use bevy::render::mesh::VertexAttributeValues;
 use image::{open, Rgb, RgbImage};
 use itertools::Itertools;
 use std::collections::HashMap;

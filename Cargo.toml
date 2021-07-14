@@ -12,12 +12,23 @@ repository = "https://github.com/jomala/bevy_skybox/"
 edition = "2018"
 include = ["src/**/*", "README.md", "CHANGELOG.md"]
 
+[features]
+default = []
+fly_camera = ["bevy_fly_camera"]
+
 [dependencies]
-bevy = "0.5"
+bevy = { git = "https://github.com/bevyengine/bevy", branch = "main" }
+bevy_fly_camera = { version = "0.7", default-features = false, optional = true }
 image = "0.23"
 itertools = "0.10"
 
 [dev-dependencies]
-bevy_fly_camera = "0.7"
 bevy_log = "0.5"
 rand = "0.8"
+
+[[example]]
+name = "board_flyover"
+required-features = ["fly_camera"]
+
+[patch.crates-io]
+bevy_fly_camera = { git = "https://github.com/slyedoc/bevy_fly_camera", default-features = false, optional = true }
