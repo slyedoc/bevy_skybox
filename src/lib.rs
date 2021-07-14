@@ -7,9 +7,9 @@
 //! use bevy::prelude::*;
 //! use bevy_skybox::{SkyboxPlugin, SkyboxCamera};
 //!
-//! fn setup(commands: Commands) {
+//! fn setup(mut commands: Commands) {
 //!		commands
-//! 		.spawn_bundle(Camera3dBundle::default())
+//! 		.spawn_bundle(PerspectiveCameraBundle::default())
 //! 		.insert(SkyboxCamera);
 //! }
 //!
