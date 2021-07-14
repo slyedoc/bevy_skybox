@@ -27,7 +27,7 @@
 //! module. Instead, you may need to copy the flipped image (in "Paint")
 //! and then paste it into a new file.
 
-use bevy::prelude::*;
+use bevy::{prelude::*, render::mesh::VertexAttributeValues};
 use image::{open, Rgb, RgbImage};
 use itertools::Itertools;
 use std::collections::HashMap;
@@ -74,7 +74,7 @@ fn get_mesh(image: &str) -> Result<Mesh, ImageError> {
     // This relies on the particular face and vertex order of the
     // `shape::cube`.
     let mut mesh = Mesh::from(shape::Cube { size: -1.0 });
-    let uv = VertexAttributeValues::Float2(vec![
+    let uv = VertexAttributeValues::Float32x2(vec![
         [fx[1], fy[1]],
         [fx[0], fy[1]],
         [fx[0], fy[2]],

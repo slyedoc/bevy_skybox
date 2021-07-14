@@ -69,7 +69,7 @@ fn setup(
         .insert(SkyboxCamera)
         .with_children(|parent| {
             // Add a light source for the board that moves with the camera.
-            parent.spawn_bundle(LightBundle {
+            parent.spawn_bundle(PointLightBundle {
                 transform: Transform::from_translation(Vec3::new(0.0, 30.0, 0.0)),
                 ..Default::default()
             });

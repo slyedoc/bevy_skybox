@@ -17,12 +17,20 @@ default = []
 fly_camera = ["bevy_fly_camera"]
 
 [dependencies]
-bevy = { git = "https://github.com/bevyengine/bevy", branch = "main" }
+bevy = { git = "https://github.com/bevyengine/bevy", branch = "main", default-features = false, features = ["png"] }
 bevy_fly_camera = { version = "0.7", default-features = false, optional = true }
 image = "0.23"
 itertools = "0.10"
 
 [dev-dependencies]
+bevy = { git = "https://github.com/bevyengine/bevy", branch = "main", default-features = false, features = [
+    "x11",
+    "render",
+    "bevy_wgpu",
+    "bevy_winit",
+    "dynamic",
+    "png",
+]}
 bevy_log = "0.5"
 rand = "0.8"
 
@@ -30,5 +38,6 @@ rand = "0.8"
 name = "board_flyover"
 required-features = ["fly_camera"]
 
+# Added bevy_main
 [patch.crates-io]
 bevy_fly_camera = { git = "https://github.com/slyedoc/bevy_fly_camera", default-features = false, optional = true }
