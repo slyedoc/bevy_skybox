@@ -85,9 +85,11 @@ fn move_skybox(
 
 /// The `SkyboxCamera` tag attached to the camera (Translation) entity that
 /// triggers the skybox to move with the camera.
+#[derive(Component)]
 pub struct SkyboxCamera;
 
 /// The `SkyboxBox` tag attached to the skybox mesh entity.
+#[derive(Component)]
 pub struct SkyboxBox;
 
 /// The `SkyboxPlugin` object acts as both the plugin and the resource providing the image name.
@@ -109,7 +111,7 @@ impl SkyboxPlugin {
 }
 
 impl Plugin for SkyboxPlugin {
-    fn build(&self, app: &mut AppBuilder) {
+    fn build(&self, app: &mut App) {
         app.insert_resource(self.clone());
         app.add_startup_system(image::create_skybox.system());
         app.add_startup_system(create_pipeline.system());

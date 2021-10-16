@@ -28,7 +28,7 @@ fn main() {
     // Get the skybox image.
     let image = env::args().nth(1).unwrap_or("sky1.png".to_owned());
     // Build the window and app.
-    App::build()
+    App::new()
         .insert_resource(bevy::log::LogSettings {
             level: bevy::log::Level::INFO,
             filter: "wgpu=warn,bevy_ecs=info,bevy_skybox=info".to_string(),

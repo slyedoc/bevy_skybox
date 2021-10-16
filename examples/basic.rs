@@ -8,7 +8,7 @@ fn setup(mut commands: Commands) {
 }
 
 fn main() {
-	App::build()
+	App::new()
 		.add_plugins(DefaultPlugins)
 		.add_startup_system(setup.system())
 		.add_plugin(SkyboxPlugin::from_image_file("sky1.png"))
